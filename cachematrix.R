@@ -1,7 +1,16 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The first function defines a list of setter and getter functions that 
+## will be called by the second function. 
+## The second function calls on the getter and setter functions, and determines 
+## whether to return an already chached inverse matrix, or to 
+## compute and set a new cached value of the inverse of the input matrix. 
 
-## Write a short comment describing this function
+
+
+## The makeCasheMatrix function creates a list of function objects
+## to be called in the second functino. The function objects created here
+## include the setter and getter functions to set and retrieve the inverse 
+## of the matrix from the input. This function also sets the initial empty
+## matrix input, as well as the initial null value for the inverse function.
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
@@ -18,7 +27,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## The cacheSolve function retrieves the stored inverse of the input matrix, and 
+## see if it is null. It returns the stored value if it is there. But if the 
+## initial value of the inverse is null, then the cacheSolve function computes
+## the inverse of the input matrix, and sets it as the cached value. 
 
 cacheSolve <- function(x, ...) {
         inv <- x$getinv()
